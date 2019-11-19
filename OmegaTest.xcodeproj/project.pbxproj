@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65B457B614DB4A59748EAA38 /* Pods_OmegaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8E18516B1ABBDAC505A76 /* Pods_OmegaTest.framework */; };
+		9BBF51572382BC21006C2C9D /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF51562382BC21006C2C9D /* TransactionsService.swift */; };
+		9BBF51592382BC32006C2C9D /* TransactionWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF51582382BC32006C2C9D /* TransactionWidgetModel.swift */; };
+		9BBF515D2383220F006C2C9D /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF515C2383220F006C2C9D /* TransactionView.swift */; };
+		9BBF515F2383221A006C2C9D /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF515E2383221A006C2C9D /* DaySectionView.swift */; };
+		9BE7B8202383A9EE004E515D /* TransactionsFeed.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7B81D2383A9EE004E515D /* TransactionsFeed.graphql */; };
+		9BE7B8212383A9EE004E515D /* Transaction.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7B81E2383A9EE004E515D /* Transaction.graphql */; };
+		9BE7B8222383A9EE004E515D /* DaySection.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7B81F2383A9EE004E515D /* DaySection.graphql */; };
+		9BE7B8242383ACDD004E515D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8232383ACDD004E515D /* API.swift */; };
+		9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EA238287B2001949FD /* AppDelegate.swift */; };
+		9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EC238287B2001949FD /* SceneDelegate.swift */; };
+		9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EE238287B2001949FD /* TransactionsFeedView.swift */; };
+		9BF817F1238287B3001949FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF817F0238287B3001949FD /* Assets.xcassets */; };
+		9BF817F4238287B3001949FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF817F3238287B3001949FD /* Preview Assets.xcassets */; };
+		9BF817F7238287B3001949FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF817F5238287B3001949FD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6651DB3405D8E1D2C554F51A /* Pods-OmegaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmegaTest.release.xcconfig"; path = "Target Support Files/Pods-OmegaTest/Pods-OmegaTest.release.xcconfig"; sourceTree = "<group>"; };
+		7A2E02F8B2A8FFBF40C1FA6E /* Pods-OmegaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmegaTest.debug.xcconfig"; path = "Target Support Files/Pods-OmegaTest/Pods-OmegaTest.debug.xcconfig"; sourceTree = "<group>"; };
+		9BBF51562382BC21006C2C9D /* TransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
+		9BBF51582382BC32006C2C9D /* TransactionWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionWidgetModel.swift; sourceTree = "<group>"; };
+		9BBF515C2383220F006C2C9D /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		9BBF515E2383221A006C2C9D /* DaySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySectionView.swift; sourceTree = "<group>"; };
+		9BE7B81D2383A9EE004E515D /* TransactionsFeed.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TransactionsFeed.graphql; sourceTree = "<group>"; };
+		9BE7B81E2383A9EE004E515D /* Transaction.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Transaction.graphql; sourceTree = "<group>"; };
+		9BE7B81F2383A9EE004E515D /* DaySection.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DaySection.graphql; sourceTree = "<group>"; };
+		9BE7B8232383ACDD004E515D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = OmegaTest/API.swift; sourceTree = SOURCE_ROOT; };
+		9BF817E7238287B2001949FD /* OmegaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmegaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BF817EA238287B2001949FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BF817EC238287B2001949FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9BF817EE238287B2001949FD /* TransactionsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFeedView.swift; sourceTree = "<group>"; };
+		9BF817F0238287B3001949FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BF817F3238287B3001949FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BF817F6238287B3001949FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BF817F8238287B3001949FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD8E18516B1ABBDAC505A76 /* Pods_OmegaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmegaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BF817E4238287B2001949FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B457B614DB4A59748EAA38 /* Pods_OmegaTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56A95D7C1A85B9413F705704 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E02F8B2A8FFBF40C1FA6E /* Pods-OmegaTest.debug.xcconfig */,
+				6651DB3405D8E1D2C554F51A /* Pods-OmegaTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BBF51542382BBFA006C2C9D /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7B8232383ACDD004E515D /* API.swift */,
+				9BE7B81F2383A9EE004E515D /* DaySection.graphql */,
+				9BE7B81E2383A9EE004E515D /* Transaction.graphql */,
+				9BE7B81D2383A9EE004E515D /* TransactionsFeed.graphql */,
+			);
+			path = Apollo;
+			sourceTree = "<group>";
+		};
+		9BBF51552382BC05006C2C9D /* TransactionsService */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF51562382BC21006C2C9D /* TransactionsService.swift */,
+				9BBF51582382BC32006C2C9D /* TransactionWidgetModel.swift */,
+			);
+			path = TransactionsService;
+			sourceTree = "<group>";
+		};
+		9BBF515A238321C8006C2C9D /* DaySectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF515E2383221A006C2C9D /* DaySectionView.swift */,
+			);
+			path = DaySectionView;
+			sourceTree = "<group>";
+		};
+		9BBF515B238321DD006C2C9D /* TransactionView */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF515C2383220F006C2C9D /* TransactionView.swift */,
+			);
+			path = TransactionView;
+			sourceTree = "<group>";
+		};
+		9BECC8712382B869002EEC24 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF51542382BBFA006C2C9D /* Apollo */,
+				9BBF51552382BC05006C2C9D /* TransactionsService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9BECC8722382B870002EEC24 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF515B238321DD006C2C9D /* TransactionView */,
+				9BBF515A238321C8006C2C9D /* DaySectionView */,
+				9BF817EE238287B2001949FD /* TransactionsFeedView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9BF817DE238287B2001949FD = {
+			isa = PBXGroup;
+			children = (
+				9BF817E9238287B2001949FD /* OmegaTest */,
+				9BF817E8238287B2001949FD /* Products */,
+				56A95D7C1A85B9413F705704 /* Pods */,
+				C7D4C305C3F56BBA20BDDFAC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9BF817E8238287B2001949FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BF817E7238287B2001949FD /* OmegaTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BF817E9238287B2001949FD /* OmegaTest */ = {
+			isa = PBXGroup;
+			children = (
+				9BECC8722382B870002EEC24 /* UI */,
+				9BECC8712382B869002EEC24 /* Services */,
+				9BF817EA238287B2001949FD /* AppDelegate.swift */,
+				9BF817EC238287B2001949FD /* SceneDelegate.swift */,
+				9BF817F0238287B3001949FD /* Assets.xcassets */,
+				9BF817F5238287B3001949FD /* LaunchScreen.storyboard */,
+				9BF817F8238287B3001949FD /* Info.plist */,
+				9BF817F2238287B3001949FD /* Preview Content */,
+			);
+			path = OmegaTest;
+			sourceTree = "<group>";
+		};
+		9BF817F2238287B3001949FD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9BF817F3238287B3001949FD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7D4C305C3F56BBA20BDDFAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8E18516B1ABBDAC505A76 /* Pods_OmegaTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BF817E6238287B2001949FD /* OmegaTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BF817FB238287B3001949FD /* Build configuration list for PBXNativeTarget "OmegaTest" */;
+			buildPhases = (
+				A6082CDE0295F382BF82F26A /* [CP] Check Pods Manifest.lock */,
+				9BF817FE23829678001949FD /* GraphQL */,
+				9BF817E3238287B2001949FD /* Sources */,
+				9BF817E4238287B2001949FD /* Frameworks */,
+				9BF817E5238287B2001949FD /* Resources */,
+				66A39761CBC17D0E750A7115 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmegaTest;
+			productName = OmegaTest;
+			productReference = 9BF817E7238287B2001949FD /* OmegaTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BF817DF238287B2001949FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Max Kazakov";
+				TargetAttributes = {
+					9BF817E6238287B2001949FD = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = 9BF817E2238287B2001949FD /* Build configuration list for PBXProject "OmegaTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BF817DE238287B2001949FD;
+			productRefGroup = 9BF817E8238287B2001949FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BF817E6238287B2001949FD /* OmegaTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BF817E5238287B2001949FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BF817F7238287B3001949FD /* LaunchScreen.storyboard in Resources */,
+				9BF817F4238287B3001949FD /* Preview Assets.xcassets in Resources */,
+				9BE7B8212383A9EE004E515D /* Transaction.graphql in Resources */,
+				9BE7B8202383A9EE004E515D /* TransactionsFeed.graphql in Resources */,
+				9BE7B8222383A9EE004E515D /* DaySection.graphql in Resources */,
+				9BF817F1238287B3001949FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66A39761CBC17D0E750A7115 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmegaTest/Pods-OmegaTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmegaTest/Pods-OmegaTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmegaTest/Pods-OmegaTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BF817FE23829678001949FD /* GraphQL */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = GraphQL;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+		A6082CDE0295F382BF82F26A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OmegaTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BF817E3238287B2001949FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBF51592382BC32006C2C9D /* TransactionWidgetModel.swift in Sources */,
+				9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */,
+				9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */,
+				9BBF51572382BC21006C2C9D /* TransactionsService.swift in Sources */,
+				9BBF515F2383221A006C2C9D /* DaySectionView.swift in Sources */,
+				9BBF515D2383220F006C2C9D /* TransactionView.swift in Sources */,
+				9BE7B8242383ACDD004E515D /* API.swift in Sources */,
+				9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BF817F5238287B3001949FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BF817F6238287B3001949FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BF817F9238287B3001949FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BF817FA238287B3001949FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BF817FC238287B3001949FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2E02F8B2A8FFBF40C1FA6E /* Pods-OmegaTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OmegaTest/Preview Content\"";
+				DEVELOPMENT_TEAM = U8743T8Z48;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OmegaTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkazakov.OmegaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BF817FD238287B3001949FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6651DB3405D8E1D2C554F51A /* Pods-OmegaTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OmegaTest/Preview Content\"";
+				DEVELOPMENT_TEAM = U8743T8Z48;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OmegaTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxkazakov.OmegaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BF817E2238287B2001949FD /* Build configuration list for PBXProject "OmegaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BF817F9238287B3001949FD /* Debug */,
+				9BF817FA238287B3001949FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BF817FB238287B3001949FD /* Build configuration list for PBXNativeTarget "OmegaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BF817FC238287B3001949FD /* Debug */,
+				9BF817FD238287B3001949FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BF817DF238287B2001949FD /* Project object */;
+}

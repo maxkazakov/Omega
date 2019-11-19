@@ -1,0 +1,10 @@
+fragment Transaction on TransactionWidget {
+	transaction {
+		type
+		title
+		amount {
+			value
+			currencyCode
+		}
+	}
+}

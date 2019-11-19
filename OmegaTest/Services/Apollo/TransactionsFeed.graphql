@@ -1,0 +1,10 @@
+query TransactionsFeed {
+	dailyTransactionsFeed {
+		... on DaySectionWidget {
+			...DaySection
+		}
+		... on TransactionWidget {
+			...Transaction
+		}
+	}
+}
