@@ -9,13 +9,15 @@
 import Foundation
 
 
-extension Transaction.Transaction.Amount {
-	private var money: String {
+extension Money {
+	var money: String {
 		var value = self.value
-		var sign = ""
+		let sign: String
 		if value.first == "-" {
 			sign = String(value.removeFirst())
+		} else {
+			sign = "+"
 		}
-		return sign + self.currencyCode.symbol + value
+		return sign + currencyCode.symbol + value
 	}
 }

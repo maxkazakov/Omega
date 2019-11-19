@@ -21,11 +21,37 @@ struct TransactionView: View {
 					.cornerRadius(20)
 				}
 				Text(transaction.transaction.title)
+					.foregroundColor(fontColor)
 			}
 			Spacer()
-			Text(transaction.transaction.amount.value)
+			Text(money.money)
+				.foregroundColor(fontColor)
 		}
-		.padding([.top, .bottom, .leading], 15)
+		.padding(15)		
+		.background(
+			isCashback
+				? Color(Constants.cashbackBackgroundColor)
+				: Color.white
+		)
+		.cornerRadius(16)
+	}
+	
+	// MARK: -Private
+	private enum Constants {
+		static let cashbackBackgroundColor = #colorLiteral(red: 0.937254902, green: 0.9803921569, blue: 0.8980392157, alpha: 1)
+		static let cashbackFontColor = #colorLiteral(red: 0.4745098039, green: 0.6196078431, blue: 0.3490196078, alpha: 1)
+	}
+	
+	private var fontColor: Color {
+		return isCashback ? Color(Constants.cashbackFontColor) : .black
+	}
+	
+	private var money: Money {
+		return transaction.transaction.amount.fragments.money
+	}
+	
+	private var isCashback: Bool {
+		return transaction.transaction.type == .cashback
 	}
 }
 
@@ -35,7 +61,7 @@ struct TransactionView_Previews: PreviewProvider {
 			transaction: .init(
 				type: .regular,
 				title: "Bella Italia",
-				amount: .init(value: "-5.50", currencyCode: .usd)
+				amount: .init(value: "5.50", currencyCode: .usd)
 			),
 			image: .init(iconName: "restaurant")
 			)

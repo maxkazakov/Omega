@@ -3,8 +3,7 @@ fragment Transaction on TransactionWidget {
 		type
 		title
 		amount {
-			value
-			currencyCode
+			... Money
 		}
 	}
 	image {

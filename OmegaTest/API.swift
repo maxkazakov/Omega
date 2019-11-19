@@ -3,6 +3,46 @@
 import Apollo
 import Foundation
 
+public enum TransactionType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case regular
+  case cashback
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "REGULAR": self = .regular
+      case "CASHBACK": self = .cashback
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .regular: return "REGULAR"
+      case .cashback: return "CASHBACK"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: TransactionType, rhs: TransactionType) -> Bool {
+    switch (lhs, rhs) {
+      case (.regular, .regular): return true
+      case (.cashback, .cashback): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [TransactionType] {
+    return [
+      .regular,
+      .cashback,
+    ]
+  }
+}
+
 public enum CurrencyCode: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case gbp
@@ -48,46 +88,6 @@ public enum CurrencyCode: RawRepresentable, Equatable, Hashable, CaseIterable, A
   }
 }
 
-public enum TransactionType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
-  public typealias RawValue = String
-  case regular
-  case cashback
-  /// Auto generated constant for unknown enum values
-  case __unknown(RawValue)
-
-  public init?(rawValue: RawValue) {
-    switch rawValue {
-      case "REGULAR": self = .regular
-      case "CASHBACK": self = .cashback
-      default: self = .__unknown(rawValue)
-    }
-  }
-
-  public var rawValue: RawValue {
-    switch self {
-      case .regular: return "REGULAR"
-      case .cashback: return "CASHBACK"
-      case .__unknown(let value): return value
-    }
-  }
-
-  public static func == (lhs: TransactionType, rhs: TransactionType) -> Bool {
-    switch (lhs, rhs) {
-      case (.regular, .regular): return true
-      case (.cashback, .cashback): return true
-      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
-      default: return false
-    }
-  }
-
-  public static var allCases: [TransactionType] {
-    return [
-      .regular,
-      .cashback,
-    ]
-  }
-}
-
 public final class TransactionsFeedQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition =
@@ -107,7 +107,7 @@ public final class TransactionsFeedQuery: GraphQLQuery {
 
   public let operationName = "TransactionsFeed"
 
-  public var queryDocument: String { return operationDefinition.appending(DaySection.fragmentDefinition).appending(Transaction.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending(DaySection.fragmentDefinition).appending(Money.fragmentDefinition).appending(Transaction.fragmentDefinition) }
 
   public init() {
   }
@@ -299,8 +299,7 @@ public struct DaySection: GraphQLFragment {
       date
       amount {
         __typename
-        value
-        currencyCode
+        ...Money
       }
     }
     """
@@ -355,8 +354,7 @@ public struct DaySection: GraphQLFragment {
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLField("value", type: .nonNull(.scalar(String.self))),
-      GraphQLField("currencyCode", type: .nonNull(.scalar(CurrencyCode.self))),
+      GraphQLFragmentSpread(Money.self),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -378,21 +376,29 @@ public struct DaySection: GraphQLFragment {
       }
     }
 
-    public var value: String {
+    public var fragments: Fragments {
       get {
-        return resultMap["value"]! as! String
+        return Fragments(unsafeResultMap: resultMap)
       }
       set {
-        resultMap.updateValue(newValue, forKey: "value")
+        resultMap += newValue.resultMap
       }
     }
 
-    public var currencyCode: CurrencyCode {
-      get {
-        return resultMap["currencyCode"]! as! CurrencyCode
+    public struct Fragments {
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
       }
-      set {
-        resultMap.updateValue(newValue, forKey: "currencyCode")
+
+      public var money: Money {
+        get {
+          return Money(unsafeResultMap: resultMap)
+        }
+        set {
+          resultMap += newValue.resultMap
+        }
       }
     }
   }
@@ -410,8 +416,7 @@ public struct Transaction: GraphQLFragment {
         title
         amount {
           __typename
-          value
-          currencyCode
+          ...Money
         }
       }
       image {
@@ -527,8 +532,7 @@ public struct Transaction: GraphQLFragment {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("value", type: .nonNull(.scalar(String.self))),
-        GraphQLField("currencyCode", type: .nonNull(.scalar(CurrencyCode.self))),
+        GraphQLFragmentSpread(Money.self),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -550,21 +554,29 @@ public struct Transaction: GraphQLFragment {
         }
       }
 
-      public var value: String {
+      public var fragments: Fragments {
         get {
-          return resultMap["value"]! as! String
+          return Fragments(unsafeResultMap: resultMap)
         }
         set {
-          resultMap.updateValue(newValue, forKey: "value")
+          resultMap += newValue.resultMap
         }
       }
 
-      public var currencyCode: CurrencyCode {
-        get {
-          return resultMap["currencyCode"]! as! CurrencyCode
+      public struct Fragments {
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
         }
-        set {
-          resultMap.updateValue(newValue, forKey: "currencyCode")
+
+        public var money: Money {
+          get {
+            return Money(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
         }
       }
     }
@@ -604,6 +616,63 @@ public struct Transaction: GraphQLFragment {
       set {
         resultMap.updateValue(newValue, forKey: "iconName")
       }
+    }
+  }
+}
+
+public struct Money: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition =
+    """
+    fragment Money on Money {
+      __typename
+      value
+      currencyCode
+    }
+    """
+
+  public static let possibleTypes = ["Money"]
+
+  public static let selections: [GraphQLSelection] = [
+    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+    GraphQLField("value", type: .nonNull(.scalar(String.self))),
+    GraphQLField("currencyCode", type: .nonNull(.scalar(CurrencyCode.self))),
+  ]
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(value: String, currencyCode: CurrencyCode) {
+    self.init(unsafeResultMap: ["__typename": "Money", "value": value, "currencyCode": currencyCode])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  public var value: String {
+    get {
+      return resultMap["value"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "value")
+    }
+  }
+
+  public var currencyCode: CurrencyCode {
+    get {
+      return resultMap["currencyCode"]! as! CurrencyCode
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "currencyCode")
     }
   }
 }

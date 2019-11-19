@@ -16,10 +16,10 @@ struct DaySectionView: View {
 			Text(daySection.date)
 				.foregroundColor(.secondary)
 			Spacer()
-			Text("123")
+			Text(daySection.amount.fragments.money.money)
 				.bold()
 		}
-		.padding([.top, .bottom], 15)
+		.padding(15)			
 	}
 }
 
