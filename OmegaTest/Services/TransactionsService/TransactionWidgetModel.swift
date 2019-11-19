@@ -38,3 +38,8 @@ extension TransactionWidgetModel: Identifiable {
 	}
 }
 
+extension Transaction: Identifiable {
+	public var id: String {
+		return self.transaction.id
+	}
+}

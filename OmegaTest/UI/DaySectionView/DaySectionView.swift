@@ -19,7 +19,8 @@ struct DaySectionView: View {
 			Text(daySection.amount.fragments.money.money)
 				.bold()
 		}
-		.padding(15)			
+		.padding([.top, .bottom], 16)
+		.padding([.leading, .trailing], 32)		
 	}
 }
 

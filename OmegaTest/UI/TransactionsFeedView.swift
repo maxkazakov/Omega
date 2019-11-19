@@ -24,33 +24,69 @@ struct TransactionsFeedView: View {
 	
 	
 	// MARK: -Private
-	
-	private func makeCell(model: TransactionWidgetModel) -> some View {
-		switch model {
-		case .daySection(let daySection):
-			return AnyView(DaySectionView(daySection: daySection))
-		case .transaction(let transaction):
-			return AnyView(TransactionView(transaction: transaction))
-		}
-	}
-	
-	
 	private func makeMainView() -> some View {
 		switch store.state.transactionsListState {
 		case .isLoading:
 			return AnyView(ActivityIndicator(isAnimating: .constant(true), style: .large))
 		case .list(let models):
+			let sections = makeSectionsFromModels(models)
 			return AnyView(
-				List(models) {
-					self.makeCell(model: $0)
-				}
-			)
+				List {
+					ForEach(sections) { section in
+						Section(
+							header: DaySectionView(daySection: section.model)
+								.background(Color.white)
+								.listRowInsets(EdgeInsets()),
+							footer: Spacer()
+								.fixedSize(horizontal: false, vertical: true)
+								.frame(width: nil, height: 12, alignment: .top)
+								.background(Color(Constants.footerColor))
+								.listRowInsets(EdgeInsets())
+						) {
+								ForEach(section.rows) { row in
+									TransactionView(transaction: row)
+								}
+						}
+					}
+				})
 		case .error(_):
 			// TODO: презентовать ошибку
 			return AnyView(EmptyView())
 		}
 	}
 	
+	
+	private enum Constants {
+		static let footerColor = #colorLiteral(red: 0.9607843137, green: 0.9764705882, blue: 0.9960784314, alpha: 1)
+	}
+	
+	private func makeSectionsFromModels(_ models: [TransactionWidgetModel]) -> [TransactionSection] {
+		var result = [TransactionSection]()
+		var currentRows = [Transaction]()
+		var currentSection: DaySection?
+		models.forEach { model in
+			switch model {
+			case .daySection(let daySection):
+				if let section = currentSection {
+					result.append(TransactionSection(model: section, rows: currentRows))
+					currentRows = []
+				}
+				currentSection = daySection
+			case .transaction(let transaction):
+				currentRows.append(transaction)
+			}
+		}
+		return result
+	}
+	
+	
+	struct TransactionSection: Identifiable {
+		var id: String {
+			return model.date
+		}
+		let model: DaySection
+		let rows: [Transaction]
+	}
 }
 
 struct TransactionsFeedView_Previews: PreviewProvider {
