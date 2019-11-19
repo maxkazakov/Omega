@@ -33,22 +33,20 @@ struct TransactionsFeedView: View {
 			return AnyView(
 				List {
 					ForEach(sections) { section in
-						Section(
-							header: DaySectionView(daySection: section.model)
-								.background(Color.white)
-								.listRowInsets(EdgeInsets()),
-							footer: Spacer()
-								.fixedSize(horizontal: false, vertical: true)
-								.frame(width: nil, height: 12, alignment: .top)
-								.background(Color(Constants.footerColor))
-								.listRowInsets(EdgeInsets())
-						) {
-								ForEach(section.rows) { row in
-									TransactionView(transaction: row)
-								}
+						DaySectionView(daySection: section.model)
+							.listRowInsets(EdgeInsets())
+						ForEach(section.rows) { row in
+							TransactionView(transaction: row)
 						}
+						Spacer()
+							.fixedSize(horizontal: false, vertical: true)
+							.frame(width: nil, height: 12, alignment: .top)
+							.background(Color(Constants.footerColor))
+							.listRowInsets(EdgeInsets())
 					}
-				})
+				}
+				.listStyle(PlainListStyle())
+			)
 		case .error(_):
 			// TODO: презентовать ошибку
 			return AnyView(EmptyView())

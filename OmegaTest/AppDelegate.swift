@@ -21,19 +21,9 @@ let store = Store(initialState: AppState.default, reducer: appReducer)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-	var cancellable: AnyCancellable!
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		
-		self.cancellable = transactionsService.loadAllTransactionWidgets()
-			.sink(
-				receiveCompletion: { _ in },
-				receiveValue: { value in
-					print(value)
-			}
-		)
-		
 		return true
 	}
 

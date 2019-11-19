@@ -25,6 +25,7 @@ enum SideEffect: Effect {
 		case .loadTransactionsList:
 			return transactionsService
 				.loadAllTransactionWidgets()
+				.delay(for: 1, scheduler: DispatchQueue.main)
 				.map { AppAction.successTransactionList($0) }
 				.catch { error in Just(AppAction.failureTransactionList(error)) }
 				.eraseToAnyPublisher()
