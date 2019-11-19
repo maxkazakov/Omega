@@ -9,13 +9,37 @@
 import SwiftUI
 
 struct TransactionView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	let transaction: Transaction
+	
+	var body: some View {
+		HStack {
+			HStack(alignment: .center, spacing: 16) {
+				transaction.image?.iconName.map {
+					Image($0)
+					.resizable()
+					.frame(width: 50.0, height: 50.0)
+					.cornerRadius(20)
+				}
+				Text(transaction.transaction.title)
+			}
+			Spacer()
+			Text(transaction.transaction.amount.value)
+		}
+		.padding([.top, .bottom, .leading], 15)
+	}
 }
 
 struct TransactionView_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionView()
-    }
+	static var previews: some View {
+		TransactionView(transaction: .init(
+			transaction: .init(
+				type: .regular,
+				title: "Bella Italia",
+				amount: .init(value: "-5.50", currencyCode: .usd)
+			),
+			image: .init(iconName: "restaurant")
+			)
+		)
+			.previewLayout(.sizeThatFits)
+	}
 }

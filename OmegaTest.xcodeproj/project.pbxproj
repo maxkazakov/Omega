@@ -16,6 +16,8 @@
 		9BE7B8212383A9EE004E515D /* Transaction.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7B81E2383A9EE004E515D /* Transaction.graphql */; };
 		9BE7B8222383A9EE004E515D /* DaySection.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9BE7B81F2383A9EE004E515D /* DaySection.graphql */; };
 		9BE7B8242383ACDD004E515D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8232383ACDD004E515D /* API.swift */; };
+		9BE7B8272383B20D004E515D /* CurrenyCode+Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */; };
+		9BE7B8292383B7C5004E515D /* Amout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8282383B7C5004E515D /* Amout+Extension.swift */; };
 		9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EA238287B2001949FD /* AppDelegate.swift */; };
 		9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EC238287B2001949FD /* SceneDelegate.swift */; };
 		9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EE238287B2001949FD /* TransactionsFeedView.swift */; };
@@ -35,6 +37,8 @@
 		9BE7B81E2383A9EE004E515D /* Transaction.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Transaction.graphql; sourceTree = "<group>"; };
 		9BE7B81F2383A9EE004E515D /* DaySection.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DaySection.graphql; sourceTree = "<group>"; };
 		9BE7B8232383ACDD004E515D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = OmegaTest/API.swift; sourceTree = SOURCE_ROOT; };
+		9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrenyCode+Symbol.swift"; sourceTree = "<group>"; };
+		9BE7B8282383B7C5004E515D /* Amout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amout+Extension.swift"; sourceTree = "<group>"; };
 		9BF817E7238287B2001949FD /* OmegaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmegaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF817EA238287B2001949FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BF817EC238287B2001949FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 			path = TransactionView;
 			sourceTree = "<group>";
 		};
+		9BE7B8252383B1F7004E515D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */,
+				9BE7B8282383B7C5004E515D /* Amout+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9BECC8712382B869002EEC24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		9BF817E9238287B2001949FD /* OmegaTest */ = {
 			isa = PBXGroup;
 			children = (
+				9BE7B8252383B1F7004E515D /* Extensions */,
 				9BECC8722382B870002EEC24 /* UI */,
 				9BECC8712382B869002EEC24 /* Services */,
 				9BF817EA238287B2001949FD /* AppDelegate.swift */,
@@ -310,10 +324,12 @@
 			files = (
 				9BBF51592382BC32006C2C9D /* TransactionWidgetModel.swift in Sources */,
 				9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */,
+				9BE7B8292383B7C5004E515D /* Amout+Extension.swift in Sources */,
 				9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */,
 				9BBF51572382BC21006C2C9D /* TransactionsService.swift in Sources */,
 				9BBF515F2383221A006C2C9D /* DaySectionView.swift in Sources */,
 				9BBF515D2383220F006C2C9D /* TransactionView.swift in Sources */,
+				9BE7B8272383B20D004E515D /* CurrenyCode+Symbol.swift in Sources */,
 				9BE7B8242383ACDD004E515D /* API.swift in Sources */,
 				9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */,
 			);

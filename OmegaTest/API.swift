@@ -414,6 +414,10 @@ public struct Transaction: GraphQLFragment {
           currencyCode
         }
       }
+      image {
+        __typename
+        iconName
+      }
     }
     """
 
@@ -422,6 +426,7 @@ public struct Transaction: GraphQLFragment {
   public static let selections: [GraphQLSelection] = [
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
     GraphQLField("transaction", type: .nonNull(.object(Transaction.selections))),
+    GraphQLField("image", type: .object(Image.selections)),
   ]
 
   public private(set) var resultMap: ResultMap
@@ -430,8 +435,8 @@ public struct Transaction: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(transaction: Transaction) {
-    self.init(unsafeResultMap: ["__typename": "TransactionWidget", "transaction": transaction.resultMap])
+  public init(transaction: Transaction, image: Image? = nil) {
+    self.init(unsafeResultMap: ["__typename": "TransactionWidget", "transaction": transaction.resultMap, "image": image.flatMap { (value: Image) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -449,6 +454,15 @@ public struct Transaction: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue.resultMap, forKey: "transaction")
+    }
+  }
+
+  public var image: Image? {
+    get {
+      return (resultMap["image"] as? ResultMap).flatMap { Image(unsafeResultMap: $0) }
+    }
+    set {
+      resultMap.updateValue(newValue?.resultMap, forKey: "image")
     }
   }
 
@@ -552,6 +566,43 @@ public struct Transaction: GraphQLFragment {
         set {
           resultMap.updateValue(newValue, forKey: "currencyCode")
         }
+      }
+    }
+  }
+
+  public struct Image: GraphQLSelectionSet {
+    public static let possibleTypes = ["Image"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("iconName", type: .scalar(String.self)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(iconName: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Image", "iconName": iconName])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    public var iconName: String? {
+      get {
+        return resultMap["iconName"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "iconName")
       }
     }
   }

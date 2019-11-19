@@ -9,18 +9,23 @@
 import SwiftUI
 
 struct DaySectionView: View {
-	
+	let daySection: DaySection
 	
 	var body: some View {
-//		HStack {
-//			Text(
-//		}
-		Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		HStack {
+			Text(daySection.date)
+				.foregroundColor(.secondary)
+			Spacer()
+			Text("123")
+				.bold()
+		}
+		.padding([.top, .bottom], 15)
 	}
 }
 
 struct DaySectionView_Previews: PreviewProvider {
 	static var previews: some View {
-		DaySectionView()
+		DaySectionView(daySection: DaySection(date: "August, 9", amount: .init(value: "+200.50", currencyCode: .gbp)))
+			.previewLayout(.sizeThatFits)
 	}
 }
