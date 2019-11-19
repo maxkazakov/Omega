@@ -18,6 +18,13 @@
 		9BE7B8242383ACDD004E515D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8232383ACDD004E515D /* API.swift */; };
 		9BE7B8272383B20D004E515D /* CurrenyCode+Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */; };
 		9BE7B8292383B7C5004E515D /* Money+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8282383B7C5004E515D /* Money+Extension.swift */; };
+		9BE7B82C2383D0FF004E515D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B82B2383D0FF004E515D /* Store.swift */; };
+		9BE7B82E2383D11E004E515D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B82D2383D11E004E515D /* AppState.swift */; };
+		9BE7B8302383D1B7004E515D /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B82F2383D1B7004E515D /* AppAction.swift */; };
+		9BE7B8322383D1EF004E515D /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8312383D1EF004E515D /* Reducer.swift */; };
+		9BE7B8342383D281004E515D /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8332383D281004E515D /* Effect.swift */; };
+		9BE7B8382383DBFA004E515D /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8372383DBFA004E515D /* ActivityIndicator.swift */; };
+		9BE7B83A2383DE51004E515D /* DaySection+DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7B8392383DE51004E515D /* DaySection+DateFormat.swift */; };
 		9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EA238287B2001949FD /* AppDelegate.swift */; };
 		9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EC238287B2001949FD /* SceneDelegate.swift */; };
 		9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF817EE238287B2001949FD /* TransactionsFeedView.swift */; };
@@ -39,6 +46,13 @@
 		9BE7B8232383ACDD004E515D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = OmegaTest/API.swift; sourceTree = SOURCE_ROOT; };
 		9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrenyCode+Symbol.swift"; sourceTree = "<group>"; };
 		9BE7B8282383B7C5004E515D /* Money+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Money+Extension.swift"; sourceTree = "<group>"; };
+		9BE7B82B2383D0FF004E515D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9BE7B82D2383D11E004E515D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9BE7B82F2383D1B7004E515D /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		9BE7B8312383D1EF004E515D /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		9BE7B8332383D281004E515D /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		9BE7B8372383DBFA004E515D /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9BE7B8392383DE51004E515D /* DaySection+DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaySection+DateFormat.swift"; sourceTree = "<group>"; };
 		9BF817E7238287B2001949FD /* OmegaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmegaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF817EA238287B2001949FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BF817EC238287B2001949FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +126,37 @@
 			children = (
 				9BE7B8262383B20D004E515D /* CurrenyCode+Symbol.swift */,
 				9BE7B8282383B7C5004E515D /* Money+Extension.swift */,
+				9BE7B8392383DE51004E515D /* DaySection+DateFormat.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9BE7B82A2383D0F1004E515D /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7B82B2383D0FF004E515D /* Store.swift */,
+				9BE7B82D2383D11E004E515D /* AppState.swift */,
+				9BE7B82F2383D1B7004E515D /* AppAction.swift */,
+				9BE7B8312383D1EF004E515D /* Reducer.swift */,
+				9BE7B8332383D281004E515D /* Effect.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		9BE7B8352383DBEA004E515D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7B8362383DBEF004E515D /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9BE7B8362383DBEF004E515D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7B8372383DBFA004E515D /* ActivityIndicator.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9BECC8712382B869002EEC24 /* Services */ = {
@@ -156,6 +199,8 @@
 		9BF817E9238287B2001949FD /* OmegaTest */ = {
 			isa = PBXGroup;
 			children = (
+				9BE7B8352383DBEA004E515D /* Common */,
+				9BE7B82A2383D0F1004E515D /* Store */,
 				9BE7B8252383B1F7004E515D /* Extensions */,
 				9BECC8722382B870002EEC24 /* UI */,
 				9BECC8712382B869002EEC24 /* Services */,
@@ -322,13 +367,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE7B8342383D281004E515D /* Effect.swift in Sources */,
+				9BE7B8302383D1B7004E515D /* AppAction.swift in Sources */,
 				9BBF51592382BC32006C2C9D /* TransactionWidgetModel.swift in Sources */,
 				9BF817EB238287B2001949FD /* AppDelegate.swift in Sources */,
 				9BE7B8292383B7C5004E515D /* Money+Extension.swift in Sources */,
+				9BE7B8322383D1EF004E515D /* Reducer.swift in Sources */,
+				9BE7B82E2383D11E004E515D /* AppState.swift in Sources */,
 				9BF817ED238287B2001949FD /* SceneDelegate.swift in Sources */,
 				9BBF51572382BC21006C2C9D /* TransactionsService.swift in Sources */,
 				9BBF515F2383221A006C2C9D /* DaySectionView.swift in Sources */,
+				9BE7B83A2383DE51004E515D /* DaySection+DateFormat.swift in Sources */,
+				9BE7B82C2383D0FF004E515D /* Store.swift in Sources */,
 				9BBF515D2383220F006C2C9D /* TransactionView.swift in Sources */,
+				9BE7B8382383DBFA004E515D /* ActivityIndicator.swift in Sources */,
 				9BE7B8272383B20D004E515D /* CurrenyCode+Symbol.swift in Sources */,
 				9BE7B8242383ACDD004E515D /* API.swift in Sources */,
 				9BF817EF238287B2001949FD /* TransactionsFeedView.swift in Sources */,

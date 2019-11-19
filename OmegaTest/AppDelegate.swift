@@ -14,6 +14,10 @@ let apollo = ApolloClient(url: URL(string: "http://localhost:4000/graphql")!)
 
 let transactionsService: TransactionsService = TransactionsServiceImpl()
 
+let store = Store(initialState: AppState.default, reducer: appReducer)
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

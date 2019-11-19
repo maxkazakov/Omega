@@ -13,7 +13,7 @@ struct DaySectionView: View {
 	
 	var body: some View {
 		HStack {
-			Text(daySection.date)
+			Text(daySection.formattedDate)
 				.foregroundColor(.secondary)
 			Spacer()
 			Text(daySection.amount.fragments.money.money)

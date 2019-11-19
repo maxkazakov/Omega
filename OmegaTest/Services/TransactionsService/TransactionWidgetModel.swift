@@ -18,7 +18,7 @@ enum TransactionWidgetModel {
 extension TransactionWidgetModel {
 	init?(dailyTransaction: TransactionsFeedQuery.Data.DailyTransactionsFeed) {
 		if let daySection = dailyTransaction.asDaySectionWidget {
-			self = .daySection(daySection.fragments.daySection)
+			self = .daySection(daySection.fragments.daySection)			
 		} else if let transaction = dailyTransaction.asTransactionWidget {
 			self = .transaction(transaction.fragments.transaction)
 		} else {
@@ -26,3 +26,15 @@ extension TransactionWidgetModel {
 		}
 	}
 }
+
+extension TransactionWidgetModel: Identifiable {
+	var id: String {
+		switch self {
+		case .daySection(let daySection):
+			return daySection.date
+		case .transaction(let transaction):
+			return transaction.transaction.id
+		}
+	}
+}
+

@@ -1,5 +1,6 @@
 fragment Transaction on TransactionWidget {
 	transaction {
+		id
 		type
 		title
 		amount {

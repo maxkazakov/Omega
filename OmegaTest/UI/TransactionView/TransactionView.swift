@@ -59,13 +59,14 @@ struct TransactionView_Previews: PreviewProvider {
 	static var previews: some View {
 		TransactionView(transaction: .init(
 			transaction: .init(
+				id: "1",
 				type: .regular,
 				title: "Bella Italia",
-				amount: .init(value: "5.50", currencyCode: .usd)
-			),
+				amount: .init(value: "5.50", currencyCode: .usd)),
 			image: .init(iconName: "restaurant")
 			)
 		)
 			.previewLayout(.sizeThatFits)
 	}
 }
+

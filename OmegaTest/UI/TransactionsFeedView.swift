@@ -9,24 +9,21 @@
 import SwiftUI
 
 struct TransactionsFeedView: View {
+	@EnvironmentObject var store: Store<AppState, AppAction>
 	
-	init(models: [TransactionWidgetModel]) {
-		self.models = models
+	init() {
 		UITableView.appearance().separatorStyle = .none
 	}
 	
 	var body: some View {
-		List {
-			ForEach(0..<models.count) { idx in
-				self.makeCell(model: self.models[idx])
-			}
-		}		
+		makeMainView()
+			.onAppear {
+				self.store.send(SideEffect.loadTransactionsList)
+		}
 	}
-		
+	
 	
 	// MARK: -Private
-	private let models: [TransactionWidgetModel]
-	
 	
 	private func makeCell(model: TransactionWidgetModel) -> some View {
 		switch model {
@@ -36,26 +33,29 @@ struct TransactionsFeedView: View {
 			return AnyView(TransactionView(transaction: transaction))
 		}
 	}
+	
+	
+	private func makeMainView() -> some View {
+		switch store.state.transactionsListState {
+		case .isLoading:
+			return AnyView(ActivityIndicator(isAnimating: .constant(true), style: .large))
+		case .list(let models):
+			return AnyView(
+				List(models) {
+					self.makeCell(model: $0)
+				}
+			)
+		case .error(_):
+			// TODO: презентовать ошибку
+			return AnyView(EmptyView())
+		}
+	}
+	
 }
 
 struct TransactionsFeedView_Previews: PreviewProvider {
 	static var previews: some View {
-		TransactionsFeedView(models: [
-			.daySection(DaySection(date: "August, 9", amount: .init(value: "200.50", currencyCode: .gbp))),
-			.transaction(.init(
-				transaction: .init(
-					type: .regular,
-					title: "Bella Italia",
-					amount: .init(value: "-200.50", currencyCode: .usd)
-				), image: .init(iconName: "restaurant")
-				)),
-			.transaction(.init(
-				transaction: .init(
-					type: .cashback,
-					title: "Hard Rock Cafe",
-					amount: .init(value: "5.50", currencyCode: .gbp)
-				), image: .init(iconName: "cashback")
-				)),
-		])
+		TransactionsFeedView()
+			.environmentObject(debugStore)
 	}
 }

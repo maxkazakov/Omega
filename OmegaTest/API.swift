@@ -412,6 +412,7 @@ public struct Transaction: GraphQLFragment {
       __typename
       transaction {
         __typename
+        id
         type
         title
         amount {
@@ -476,6 +477,7 @@ public struct Transaction: GraphQLFragment {
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
       GraphQLField("type", type: .nonNull(.scalar(TransactionType.self))),
       GraphQLField("title", type: .nonNull(.scalar(String.self))),
       GraphQLField("amount", type: .nonNull(.object(Amount.selections))),
@@ -487,8 +489,8 @@ public struct Transaction: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(type: TransactionType, title: String, amount: Amount) {
-      self.init(unsafeResultMap: ["__typename": "Transaction", "type": type, "title": title, "amount": amount.resultMap])
+    public init(id: GraphQLID, type: TransactionType, title: String, amount: Amount) {
+      self.init(unsafeResultMap: ["__typename": "Transaction", "id": id, "type": type, "title": title, "amount": amount.resultMap])
     }
 
     public var __typename: String {
@@ -497,6 +499,15 @@ public struct Transaction: GraphQLFragment {
       }
       set {
         resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    public var id: GraphQLID {
+      get {
+        return resultMap["id"]! as! GraphQLID
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "id")
       }
     }
 
